@@ -37,8 +37,8 @@ window.onload = function(){
     angle += 0.01;
     for(var i = 0; i < mf; i++){
       var f = flakes[i];
-      f.y = Math.pow(f.d, 2) + 1;
-      f.x = Math.sin(angle) * 2;
+      f.y += Math.pow(f.d, 2) + 1;
+      f.x += Math.sin(angle) * 2;
       
       if(f.y > h){
         flakes[i] = {x: Math.random() * w, y: 0, r: f.r,d: f.d};
@@ -46,6 +46,6 @@ window.onload = function(){
 
     }
   }
-  setInterval(drawFlakes(), 1);
+  setInterval(drawFlakes, 25);
 
 }
